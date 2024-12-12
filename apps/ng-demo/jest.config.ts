@@ -1,6 +1,6 @@
 export default {
   displayName: 'ng-demo',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.cjs',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../coverage/apps/ng-demo',
   transform: {

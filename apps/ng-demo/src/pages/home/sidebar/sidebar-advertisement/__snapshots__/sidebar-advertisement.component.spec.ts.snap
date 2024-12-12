@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarAdvertisementComponent should render 1`] = `
+<div
+  id="root1"
+>
+  <div>
+    <a
+      href="https://angular.dev"
+    >
+      <img
+        class="w-100"
+        loading="lazy"
+        src="/assets/angular.gif"
+        style="margin-top: 15px;"
+      />
+    </a>
+    <a
+      href="https://angular.dev/"
+    >
+      <h2
+        class="m-0 ad-decription"
+      >
+        New Angular is Here!
+      </h2>
+    </a>
+  </div>
+</div>
+`;

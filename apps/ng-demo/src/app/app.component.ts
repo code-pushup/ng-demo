@@ -2,7 +2,20 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
-  styleUrl: './app.component.css',
+  template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  `,
+  styles: [
+    `
+      :host {
+        display: block;
+        max-width: var(--screen-width);
+        padding: 1rem;
+        margin: auto;
+        box-sizing: border-box;
+      }
+    `,
+  ],
 })
 export class AppComponent {}

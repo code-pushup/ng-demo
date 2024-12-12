@@ -1,0 +1,136 @@
+.header-container {
+  max-width: var(--screen-width);
+  padding: 0 1rem;
+  margin: auto;
+  position: relative;
+  height: var(--header-height);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.brand-logo {
+  width: 140px;
+  height: auto;
+}
+
+.header-search-input {
+  background-color: #f0eaff;
+  &:hover {
+    border-color: #99a3ad;
+  }
+  &:focus {
+    border-color: #3b49df;
+    box-shadow: 1px 1px 0 #3b49df;
+  }
+}
+
+.header-input-container {
+  margin: 0 1rem;
+  max-width: 420px;
+  flex: 1 auto;
+  box-sizing: border-box;
+}
+
+.avatar-image {
+  border-radius: 100%;
+  height: 2rem;
+  display: inline-block;
+  vertical-align: bottom;
+  &:after {
+    border: 1px solid #08090a;
+    content: '';
+    opacity: 0.15;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+    background-color: black;
+  }
+}
+
+.icon-button {
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  &:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.035);
+    color: #08090a;
+    z-index: 1;
+  }
+}
+
+.dropdown {
+  position: relative;
+  height: 100%;
+}
+
+.dropdown-content {
+  position: absolute;
+  max-width: 360px;
+  display: none;
+  width: max-content;
+  top: var(--header-height);
+  right: 1rem;
+  left: auto;
+  background: #fff;
+  border: 2px solid #08090a;
+  box-shadow: 4px 4px 0 #08090a;
+  color: #08090a;
+  border-radius: 5px;
+  min-width: 250px;
+  z-index: 400;
+  a:hover {
+    background-color: rgba(8, 9, 10, 0.05);
+    &.nav-link {
+      color: #e32fcf;
+    }
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.user-profile {
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  border: 0;
+  border-bottom: 1px solid #e32fcf;
+  &.sign-out-element {
+    border-top: 1px solid #e32fcf;
+    margin-top: 0.25rem;
+    border-bottom: unset;
+    margin-bottom: unset;
+  }
+}
+
+.nav-link {
+  display: flex;
+  color: #202428;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: background cubic-bezier(0.17, 0.67, 0.5, 0.71) 100ms,
+    color cubic-bezier(0.17, 0.67, 0.5, 0.71) 100ms;
+  small {
+    color: #7d8a97;
+    font-size: 0.875rem;
+  }
+}
+
+.nav-links-outer {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}

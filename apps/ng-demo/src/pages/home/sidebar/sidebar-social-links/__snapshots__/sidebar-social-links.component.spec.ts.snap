@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarSocialLinksComponent should render 1`] = `
+<div
+  id="root1"
+>
+  <ul>
+    <li>
+      <a
+        class="cp-anchor-navigation"
+        href="https://github.com/code-pushup/cli"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+        title="GitHub"
+      >
+        <img
+          alt="GitHub icon"
+          class="icon"
+          src="assets/github.svg"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        class="cp-anchor-navigation"
+        href="https://www.linkedin.com/company/code-pushup"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+        title="LinkedIn"
+      >
+        <img
+          alt="LinkedIn icon"
+          class="icon"
+          src="assets/linkedin.svg"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        class="cp-anchor-navigation"
+        href="https://x.com/CodePushUp"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+        title="platform X"
+      >
+        <img
+          alt="platform X icon"
+          class="icon"
+          src="assets/x-twitter.svg"
+        />
+      </a>
+    </li>
+    
+  </ul>
+</div>
+`;

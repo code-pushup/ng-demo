@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarComponent should render 1`] = `
+<div
+  id="root1"
+>
+  <aside
+    aria-label="Sidebar"
+    class="side-bar"
+  >
+    <nav
+      aria-label="Sidebar nav"
+    >
+      <a
+        class="sidebar-nav-link"
+        href="/"
+      >
+        <svg
+          aria-hidden="true"
+          class="sidebar-link-icon"
+          height="24"
+          viewBox="0 0 44 44"
+          width="24"
+        >
+          <g
+            class="nc-icon-wrapper"
+          >
+            <path
+              d="M13.344 18.702h-2a.5.5 0 01-.5-.5v-7a.5.5 0 01.5-.5h2a.5.5 0 01.5.5v7a.5.5 0 01-.5.5z"
+              fill="#A0041E"
+            />
+            <path
+              d="M9 20L22 7l13 13v17H9z"
+              fill="#FFE8B6"
+            />
+            <path
+              d="M22 20h1v16h-1z"
+              fill="#FFCC4D"
+            />
+            <path
+              d="M35 21a.997.997 0 01-.707-.293L22 8.414 9.707 20.707a1 1 0 11-1.414-1.414l13-13a.999.999 0 011.414 0l13 13A.999.999 0 0135 21z"
+              fill="#66757F"
+            />
+            <path
+              d="M22 21a.999.999 0 01-.707-1.707l6.5-6.5a1 1 0 111.414 1.414l-6.5 6.5A.997.997 0 0122 21z"
+              fill="#66757F"
+            />
+            <path
+              d="M14 30h4v6h-4z"
+              fill="#C1694F"
+            />
+            <path
+              d="M14 21h4v4h-4zm12.5 0h4v4h-4zm0 9h4v4h-4z"
+              fill="#55ACEE"
+            />
+            <path
+              d="M37.5 37.5A1.5 1.5 0 0136 39H8a1.5 1.5 0 010-3h28a1.5 1.5 0 011.5 1.5z"
+              fill="#5C913B"
+            />
+          </g>
+        </svg>
+         Home 
+      </a>
+      <div>
+        <a
+          class="sidebar-nav-link"
+          href="/readinglist"
+        >
+          <span
+            class="sidebar-link-icon"
+          >
+            <svg
+              height="24"
+              viewBox="0 0 44 44"
+              width="24"
+            >
+              <g
+                class="nc-icon-wrapper"
+              >
+                <path
+                  d="M39 24c0 2.209-1.791 2-4 2H9c-2.209 0-4 .209-4-2l2-12c.125-1.917 1.791-4 4-4h22c2.209 0 3.791 2.208 4 4l2 12z"
+                  fill="#67757F"
+                />
+                <path
+                  d="M32 17a2 2 0 01-2 2H14a2 2 0 01-2-2V9a2 2 0 012-2h16a2 2 0 012 2v8z"
+                  fill="#CCD6DD"
+                />
+                <path
+                  d="M34 21a2 2 0 01-2 2H12a2 2 0 01-2-2v-8a2 2 0 012-2h20a2 2 0 012 2v8z"
+                  fill="#E1E8ED"
+                />
+                <path
+                  d="M36 25a2 2 0 01-2 2H10a2 2 0 01-2-2v-8a2 2 0 012-2h24a2 2 0 012 2v8z"
+                  fill="#F5F8FA"
+                />
+                <path
+                  d="M39 35a4 4 0 01-4 4H9a4 4 0 01-4-4V24a4 4 0 014-4h26a4 4 0 014 4v11z"
+                  fill="#9AAAB4"
+                />
+                <path
+                  d="M18 16zm0 0z"
+                  fill="#67757F"
+                />
+                <path
+                  d="M26 5h-5a2 2 0 00-2 2v1h4a2 2 0 012 2h1a2 2 0 002-2V7a2 2 0 00-2-2z"
+                  fill="#FCAB40"
+                />
+                <path
+                  d="M22 9h-5a2 2 0 00-2 2v1h4a2 2 0 012 2h1a2 2 0 002-2v-1a2 2 0 00-2-2z"
+                  fill="#5DADEC"
+                />
+                <path
+                  d="M20 16a2 2 0 01-2 2h-5a2 2 0 01-2-2v-1a2 2 0 012-2h5a2 2 0 012 2v1z"
+                  fill="#E75A70"
+                />
+                <path
+                  d="M29 32a2 2 0 01-2 2H17a2 2 0 01-2-2v-5a2 2 0 012-2h10a2 2 0 012 2v5zm-11-4z"
+                  fill="#67757F"
+                />
+                <path
+                  d="M27 31a1 1 0 01-1 1h-8a1 1 0 01-1-1v-3a1 1 0 011-1h8a1 1 0 011 1v3z"
+                  fill="#E1E8ED"
+                />
+              </g>
+            </svg>
+          </span>
+           Reading List 
+        </a>
+        <a
+          class="sidebar-nav-link"
+          href="/videos"
+        >
+          <span
+            class="sidebar-link-icon"
+          >
+            <svg
+              height="24"
+              viewBox="0 0 44 44"
+              width="24"
+            >
+              <g
+                transform="translate(4 4)"
+              >
+                <path
+                  d="M34.074 18l-4.832 3H28v-4c0-.088-.02-.169-.026-.256C31.436 15.864 34 12.735 34 9a8 8 0 00-16.001 0c0 1.463.412 2.822 1.099 4H14.92c.047-.328.08-.66.08-1a7 7 0 10-14 0 6.995 6.995 0 004 6.317V29a4 4 0 004 4h15a4 4 0 004-4v-3h1.242l4.832 3H35V18h-.926zM28.727 3.977a5.713 5.713 0 012.984 4.961L28.18 8.35a2.276 2.276 0 00-.583-.982l1.13-3.391zm-.9 6.342l3.552.592a5.713 5.713 0 01-4.214 3.669 3.985 3.985 0 00-1.392-1.148l.625-2.19a2.425 2.425 0 001.429-.923zM26 3.285c.282 0 .557.027.828.067l-1.131 3.392c-.404.054-.772.21-1.081.446L21.42 5.592A5.703 5.703 0 0126 3.285zM20.285 9c0-.563.085-1.106.236-1.62l3.194 1.597-.002.023c0 .657.313 1.245.771 1.662L23.816 13h-1.871a5.665 5.665 0 01-1.66-4zm-9.088-.385A4.64 4.64 0 0112.667 12c0 .344-.043.677-.113 1H10.1c.145-.304.233-.641.233-1a2.32 2.32 0 00-.392-1.292l1.256-2.093zM8 7.333c.519 0 1.01.105 1.476.261L8.22 9.688c-.073-.007-.145-.022-.22-.022a2.32 2.32 0 00-1.292.392L4.615 8.803A4.64 4.64 0 018 7.333zM3.333 12c0-.519.105-1.01.261-1.477l2.095 1.257c-.007.073-.022.144-.022.22 0 .75.36 1.41.91 1.837a3.987 3.987 0 00-1.353 1.895C4.083 14.881 3.333 13.533 3.333 12z"
+                  fill="#31373D"
+                />
+                <circle
+                  cx="24"
+                  cy="19"
+                  fill="#8899A6"
+                  r="2"
+                />
+                <circle
+                  cx="9"
+                  cy="19"
+                  fill="#8899A6"
+                  r="2"
+                />
+                <path
+                  d="M24 27a2 2 0 00-2-2H11a2 2 0 00-2 2v6a2 2 0 002 2h11a2 2 0 002-2v-6z"
+                  fill="#8899A6"
+                />
+              </g>
+            </svg>
+          </span>
+           Videos 
+        </a>
+        <a
+          class="sidebar-nav-link"
+          href="https://angular.dev"
+        >
+          <span
+            class="sidebar-link-icon"
+          >
+            <img
+              class="icon-image"
+              src="/assets/angular-logo.gif"
+            />
+          </span>
+           Angular.dev 
+        </a>
+        <a
+          class="sidebar-nav-link"
+          href="https://developers.google.com/community/experts/directory?specialization=angular"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            class="sidebar-link-icon"
+          >
+            <svg
+              height="24"
+              viewBox="0 0 44 44"
+              width="24"
+            >
+              <g
+                class="nc-icon-wrapper"
+              >
+                <path
+                  d="M36 4H14a4 4 0 00-4 4v24H8a4 4 0 000 8h24a4 4 0 004-4V12a4 4 0 000-8z"
+                  fill="#FFD983"
+                />
+                <path
+                  d="M12 14h24v-2H14l-2-1z"
+                  fill="#E39F3D"
+                />
+                <path
+                  d="M14 4a4 4 0 00-4 4v24.555A3.955 3.955 0 008 32a4 4 0 104 4V11.445c.59.344 1.268.555 2 .555a4 4 0 000-8z"
+                  fill="#FFE8B6"
+                />
+                <path
+                  d="M16 8a2 2 0 11-4.001-.001A2 2 0 0116 8m-6 28a2 2 0 11-4.001-.001A2 2 0 0110 36m24-17a1 1 0 01-1 1H15a1 1 0 010-2h18a1 1 0 011 1m0 4a1 1 0 01-1 1H15a1 1 0 110-2h18a1 1 0 011 1m0 4a1 1 0 01-1 1H15a1 1 0 110-2h18a1 1 0 011 1m0 4a1 1 0 01-1 1H15a1 1 0 110-2h18a1 1 0 011 1"
+                  fill="#C1694F"
+                />
+              </g>
+            </svg>
+          </span>
+           Angular GDEs 
+        </a>
+        <hr />
+        <div>
+          <a
+            class="sidebar-nav-link"
+            href="https://github.com/code-pushup/cli"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span
+              class="sidebar-link-icon"
+            >
+              <svg
+                aria-hidden="true"
+                data-view-component="true"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+              >
+                <path
+                  d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"
+                  fill="#eac54f"
+                />
+              </svg>
+            </span>
+             Star Code PushUp CLI 
+          </a>
+          <a
+            class="sidebar-nav-link"
+            href="https://code-pushup.dev"
+            target="_blank"
+          >
+            <span
+              class="sidebar-link-icon"
+            >
+              <svg
+                fill="none"
+                height="11.78"
+                width="31.54"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="m30.65 5-5-5-1.76 1.77L28 5.89 23.89 10l1.76 1.77 5-5 .89-.88zM.89 5l5-5 1.76 1.77-4.11 4.12 4.11 4.12-1.76 1.77-5-5L0 5.89l.89-.88Zm20.88-3.35-6 8-.86 1.15-1.02-1.02-4-4 1.76-1.76L14.63 7 19.77.14l2 1.5z"
+                  fill="#2c3d79"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+             About 
+            <strong>
+              Code PushUp
+            </strong>
+          </a>
+          <app-sidebar-social-links>
+            <ul>
+              <li>
+                <a
+                  class="cp-anchor-navigation"
+                  href="https://github.com/code-pushup/cli"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  title="GitHub"
+                >
+                  <img
+                    alt="GitHub icon"
+                    class="icon"
+                    src="assets/github.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="cp-anchor-navigation"
+                  href="https://www.linkedin.com/company/code-pushup"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  title="LinkedIn"
+                >
+                  <img
+                    alt="LinkedIn icon"
+                    class="icon"
+                    src="assets/linkedin.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="cp-anchor-navigation"
+                  href="https://x.com/CodePushUp"
+                  rel="noopener noreferrer nofollow"
+                  target="_blank"
+                  title="platform X"
+                >
+                  <img
+                    alt="platform X icon"
+                    class="icon"
+                    src="assets/x-twitter.svg"
+                  />
+                </a>
+              </li>
+              
+            </ul>
+          </app-sidebar-social-links>
+        </div>
+      </div>
+    </nav>
+    <app-sidebar-tags>
+      <nav
+        aria-label="Secondary sidebar nav"
+      >
+        <header
+          class="flex align-center justify-between"
+        >
+          <h3
+            class="tags-title"
+          >
+            My Tags
+          </h3>
+          <a
+            aria-label="Customize tag priority"
+            href="/dashboard/following_tags"
+            title="Customize tag priority"
+          >
+            <svg
+              fill="#64707d"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"
+              />
+            </svg>
+          </a>
+        </header>
+        <div
+          class="followed-tags"
+          style="max-height: 42vh;"
+        >
+          
+        </div>
+        
+        
+      </nav>
+    </app-sidebar-tags>
+    <app-sidebar-advertisement>
+      <div>
+        <a
+          href="https://angular.dev"
+        >
+          <img
+            class="w-100"
+            loading="lazy"
+            src="/assets/angular.gif"
+            style="margin-top: 15px;"
+          />
+        </a>
+        <a
+          href="https://angular.dev/"
+        >
+          <h2
+            class="m-0 ad-decription"
+          >
+            New Angular is Here!
+          </h2>
+        </a>
+      </div>
+    </app-sidebar-advertisement>
+  </aside>
+</div>
+`;
