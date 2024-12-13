@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommentsStore } from '../services/comments.store';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { CommentsComponent } from '../comments/comments.component';
 
 @Component({
-    selector: 'app-comments-tree',
-    template: `
+  selector: 'app-comments-tree',
+
+  template: `
     <header class="flex justify-between">
       <h2>
         Discussion <span>({{ commentsCount }})</span>
@@ -14,8 +17,8 @@ import { CommentsStore } from '../services/comments.store';
       <app-comments [comments]="comments"></app-comments>
     </div>
   `,
-    styles: [
-        `
+  styles: [
+    `
       :host {
         display: block;
         app-comments {
@@ -23,8 +26,8 @@ import { CommentsStore } from '../services/comments.store';
         }
       }
     `,
-    ],
-    standalone: false
+  ],
+  imports: [NgIf, CommentsComponent, AsyncPipe],
 })
 export class CommentsTreeComponent {
   @Input() commentsCount = 0;

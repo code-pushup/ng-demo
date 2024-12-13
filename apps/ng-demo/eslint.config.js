@@ -12,6 +12,7 @@ export default tsESLint.config(...baseConfig, ...angular, ...storybook, {
     },
   },
   rules: {
+    '@angular-eslint/prefer-standalone-component': 'off',
     '@angular-eslint/prefer-standalone': 'error',
 
     '@typescript-eslint/explicit-module-boundary-types': 'error',

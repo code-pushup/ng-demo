@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { HOME_TAGS } from '../../../../constants/home-tags.constant';
+import { NgFor } from '@angular/common';
+import { TagArticleComponent } from '../tag-article/tag-article.component';
 
 @Component({
-    selector: 'app-rightbar-container',
-    template: `
+  selector: 'app-rightbar-container',
+
+  template: `
     <aside>
       <app-tag-article
         *ngFor="let asideTag of asideTags"
@@ -11,8 +14,8 @@ import { HOME_TAGS } from '../../../../constants/home-tags.constant';
       ></app-tag-article>
     </aside>
   `,
-    styles: [
-        `
+  styles: [
+    `
       aside {
         display: grid;
         grid-row-gap: 1rem;
@@ -21,8 +24,8 @@ import { HOME_TAGS } from '../../../../constants/home-tags.constant';
         display: block;
       }
     `,
-    ],
-    standalone: false
+  ],
+  imports: [NgFor, TagArticleComponent],
 })
 export class RightbarContainerComponent {
   asideTags = HOME_TAGS;

@@ -4,33 +4,25 @@ export const appRoutes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () =>
-      import('../pages/home/home.module').then((m) => m.HomeModule),
+    loadComponent: () => import('../pages/home/home.component'),
   },
   {
     path: 'tag/:tag',
     pathMatch: 'full',
-    loadChildren: () =>
-      import('../pages/home/home.module').then((m) => m.HomeModule),
+    loadComponent: () => import('../pages/home/home.component'),
   },
   {
     path: 'videos',
-    loadChildren: () =>
-      import('../pages/videos/videos.module').then((m) => m.VideosModule),
+    loadComponent: () => import('../pages/videos/videos.component'),
   },
   {
     path: 'users/:username',
-    loadChildren: () =>
-      import('../pages/user-profile/user-profile.module').then(
-        (m) => m.UserProfileModule
-      ),
+    loadComponent: () => import('../pages/user-profile/user-profile.component'),
   },
   {
     path: ':user/:slug',
-    loadChildren: () =>
-      import('../pages/article-detail/article-detail.module').then(
-        (m) => m.ArticleDetailModule
-      ),
+    loadComponent: () =>
+      import('../pages/article-detail/article-detail.component'),
   },
   {
     path: 'not-found',

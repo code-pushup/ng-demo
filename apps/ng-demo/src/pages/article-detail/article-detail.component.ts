@@ -5,10 +5,15 @@ import { ArticleDetailStore } from './article/services/article-detail.store';
 import { CommentsStore } from './article/services/comments.store';
 import { UserStore } from '../../state/user.store';
 import { UserArticlesStore } from '../../state/user-articles.store';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { ReactionsComponent } from './article/reactions/reactions.component';
+import { ArticleDetailsComponent } from './article/article-details/article-details.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @Component({
-    selector: 'app-article-detail',
-    template: `
+  selector: 'app-article-detail',
+
+  template: `
     <aside>
       <app-reactions
         *ngIf="reaction$ | async as reactions"
@@ -25,8 +30,8 @@ import { UserArticlesStore } from '../../state/user-articles.store';
       <app-user-detail *ngIf="user" [user]="user"></app-user-detail>
     </ng-container>
   `,
-    styles: [
-        `
+  styles: [
+    `
       :host {
         display: grid;
         grid-gap: 1rem;
@@ -37,11 +42,17 @@ import { UserArticlesStore } from '../../state/user-articles.store';
         grid-template-columns: 4rem minmax(0, 7fr) minmax(0, 3fr);
       }
     `,
-    ],
-    viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
-    standalone: false
+  ],
+  viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
+  imports: [
+    NgIf,
+    ReactionsComponent,
+    ArticleDetailsComponent,
+    UserDetailComponent,
+    AsyncPipe,
+  ],
 })
-export class ArticleDetailComponent implements OnInit {
+export default class ArticleDetailComponent implements OnInit {
   article$ = this.articleDetailStore.article$.pipe(
     tap((article) => {
       if (article?.user) {

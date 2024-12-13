@@ -2,10 +2,13 @@ import { Component, Input } from '@angular/core';
 import { map, tap, withLatestFrom } from 'rxjs/operators';
 import { ArticleDetailStore } from '../../article/services/article-detail.store';
 import { UserArticlesStore } from '../../../../state/user-articles.store';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-user-articles',
-    template: `
+  selector: 'app-user-articles',
+
+  template: `
     <ng-container *ngIf="userArticles$ | async as articles">
       <section>
         <header class="flex align-center">
@@ -30,8 +33,8 @@ import { UserArticlesStore } from '../../../../state/user-articles.store';
       </section>
     </ng-container>
   `,
-    styles: [
-        `
+  styles: [
+    `
       header {
         padding: 0.75rem 1rem;
         border-bottom: 1px solid #fbfcff;
@@ -98,8 +101,8 @@ import { UserArticlesStore } from '../../../../state/user-articles.store';
         display: inline;
       }
     `,
-    ],
-    standalone: false
+  ],
+  imports: [NgIf, NgFor, RouterLink, AsyncPipe],
 })
 export class UserArticlesComponent {
   @Input() name = '';

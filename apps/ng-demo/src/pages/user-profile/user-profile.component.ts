@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserStore } from '../../state/user.store';
 import { UserArticlesStore } from '../../state/user-articles.store';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { UserHeaderComponent } from './user-header/user-header.component';
+import { ArticleCardComponent } from '../../components/article-card/article-card.component';
 
 @Component({
-    selector: 'app-user-profile',
-    template: `
+  selector: 'app-user-profile',
+
+  template: `
     <ng-container *ngIf="user$ | async as user">
       <app-user-header *ngIf="user" [user]="user"></app-user-header>
     </ng-container>
@@ -14,19 +18,19 @@ import { UserArticlesStore } from '../../state/user-articles.store';
       <app-article-card [article]="article"></app-article-card>
     </ng-container>
   `,
-    styles: [
-        `
+  styles: [
+    `
       app-article-card {
         margin-left: auto;
         margin-right: auto;
         max-width: 994px;
       }
     `,
-    ],
-    viewProviders: [UserStore, UserArticlesStore],
-    standalone: false
+  ],
+  viewProviders: [UserStore, UserArticlesStore],
+  imports: [NgIf, UserHeaderComponent, NgFor, ArticleCardComponent, AsyncPipe],
 })
-export class UserProfileComponent implements OnInit {
+export default class UserProfileComponent implements OnInit {
   user$ = this.userStore.user$;
   articles$ = this.userArticles.articles$;
   constructor(

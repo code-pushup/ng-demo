@@ -1,12 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from "@angular/router/testing";
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ArticleContainerComponent } from './articles/article-container/article-container.component';
-import { HomeComponent } from './home.component';
+import HomeComponent from './home.component';
 import { RightbarContainerComponent } from './rightbar/rightbar-container/rightbar-container.component';
 import { SidebarComponent } from './sidebar/sidebar/sidebar.component';
-import { HomeModule } from './home.module';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -20,7 +19,7 @@ describe('HomeComponent', () => {
         ArticleContainerComponent,
         RightbarContainerComponent,
       ],
-      imports: [HomeModule, HttpClientTestingModule,  RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 

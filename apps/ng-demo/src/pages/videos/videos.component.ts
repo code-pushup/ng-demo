@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { VideosListStore } from './videos-list/services/videos-list.store';
+import { VideosHeaderComponent } from './videos-list/videos-header/videos-header.component';
+import { ScrollTrackerDirective } from '../../components/scoll-tracker/scroll-tracker.directive';
+import { NgFor, AsyncPipe } from '@angular/common';
+import { VideoCardComponent } from './videos-list/video-card/video-card.component';
 
 @Component({
-    selector: 'app-videos',
-    template: `
+  selector: 'app-videos',
+
+  template: `
     <app-videos-header></app-videos-header>
     <div scrollTracker (scrollingFinished)="onScrollingFinished()">
       <ng-container *ngFor="let videos of videosList$ | async">
@@ -11,9 +16,15 @@ import { VideosListStore } from './videos-list/services/videos-list.store';
       </ng-container>
     </div>
   `,
-    standalone: false
+  imports: [
+    VideosHeaderComponent,
+    ScrollTrackerDirective,
+    NgFor,
+    VideoCardComponent,
+    AsyncPipe,
+  ],
 })
-export class VideosComponent implements OnInit {
+export default class VideosComponent implements OnInit {
   page = '0';
   videosList$ = this.VideosListStore.VideosList$;
 

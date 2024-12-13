@@ -2,7 +2,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { HomeModule } from '../../home.module';
 import { SidebarAdvertisementComponent } from '../sidebar-advertisement/sidebar-advertisement.component';
 import { SidebarSocialLinksComponent } from '../sidebar-social-links/sidebar-social-links.component';
 import { SidebarTagsComponent } from '../sidebar-tags/sidebar-tags.component';
@@ -21,7 +20,7 @@ describe('SidebarComponent', () => {
         SidebarSocialLinksComponent,
       ],
 
-      imports: [HomeModule, HttpClientTestingModule, RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 

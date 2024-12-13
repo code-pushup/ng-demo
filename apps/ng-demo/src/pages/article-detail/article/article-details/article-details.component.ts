@@ -1,9 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { ArticleDetails } from '../../../../models/articles';
+import { NgIf, NgFor, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { CommentsTreeComponent } from '../comments-tree/comments-tree.component';
 
 @Component({
-    selector: 'app-article-details',
-    template: `
+  selector: 'app-article-details',
+
+  template: `
     <article class="card article mb-4">
       <header>
         <div class="article-cover" *ngIf="article.cover_image">
@@ -64,8 +68,8 @@ import { ArticleDetails } from '../../../../models/articles';
       ></app-comments-tree>
     </article>
   `,
-    styles: [
-        `
+  styles: [
+    `
       :host {
         border-radius: 5px;
         background-color: #fff;
@@ -143,8 +147,8 @@ import { ArticleDetails } from '../../../../models/articles';
         }
       }
     `,
-    ],
-    standalone: false
+  ],
+  imports: [NgIf, NgFor, RouterLink, CommentsTreeComponent, DatePipe],
 })
 export class ArticleDetailsComponent {
   @Input() article!: ArticleDetails;

@@ -2,10 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Reaction } from '../../../../models/reaction-data';
 
 @Component({
-    selector: 'app-reactions',
-    templateUrl: './reactions.component.html',
-    styles: [
-        `
+  selector: 'app-reactions',
+
+  templateUrl: './reactions.component.html',
+  styles: [
+    `
       :host {
         display: grid;
         gap: 1.5rem;
@@ -45,8 +46,7 @@ import { Reaction } from '../../../../models/reaction-data';
         fill: currentColor;
       }
     `,
-    ],
-    standalone: false
+  ],
 })
 export class ReactionsComponent {
   @Input() reactions: Reaction[] = [];

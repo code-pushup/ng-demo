@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { SidebarSocialLinksComponent } from '../sidebar-social-links/sidebar-social-links.component';
+import { SidebarTagsComponent } from '../sidebar-tags/sidebar-tags.component';
+import { SidebarAdvertisementComponent } from '../sidebar-advertisement/sidebar-advertisement.component';
 
 @Component({
-    selector: 'app-sidebar',
-    templateUrl: './sidebar.component.html',
-    styles: [
-        `
+  selector: 'app-sidebar',
+
+  templateUrl: './sidebar.component.html',
+  styles: [
+    `
       :host {
         display: block;
         width: 240px;
@@ -39,7 +43,11 @@ import { Component } from '@angular/core';
         height: 1.5rem;
       }
     `,
-    ],
-    standalone: false
+  ],
+  imports: [
+    SidebarSocialLinksComponent,
+    SidebarTagsComponent,
+    SidebarAdvertisementComponent,
+  ],
 })
 export class SidebarComponent {}
