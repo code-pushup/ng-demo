@@ -25,6 +25,13 @@ const esLintConfig: CoreConfig = {
       ],
     },
     {
+      slug: 'formatting',
+      title: 'Formatting',
+      refs: [
+        { type: 'group', plugin: 'eslint', slug: 'formatting', weight: 1 },
+      ],
+    },
+    {
       slug: 'modern-angular',
       title: 'Modern Angular',
       refs: [
