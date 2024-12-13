@@ -1,9 +1,37 @@
-const nx = require('@nx/eslint-plugin');
+import jest from '@code-pushup/eslint-config/jest';
+import typescript from '@code-pushup/eslint-config/typescript';
+import nxESLintPlugin from '@nx/eslint-plugin';
+import tsESLint from 'typescript-eslint';
 
-module.exports = [
-  ...nx.configs['flat/base'],
-  ...nx.configs['flat/typescript'],
-  ...nx.configs['flat/javascript'],
+export default tsESLint.config(
+  ...typescript,
+  ...jest,
+  { plugins: { '@nx': nxESLintPlugin } },
+  {
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: ['tsconfig.base.json', 'node_modules/rxjs/tsconfig.json'],
+        },
+      },
+    },
+  },
+  {
+    ignores: [
+      '/dist',
+      '/tools',
+      '**/*.md',
+      '**/*.scss',
+      '**/*.less',
+      '**/assets',
+      '**/*.ico',
+      '**/*.yml',
+      '**/*.yaml',
+      '**/Dockerfile',
+      '**/nginx.conf',
+    ],
+  },
   {
     ignores: ['**/dist'],
   },
@@ -30,4 +58,4 @@ module.exports = [
     // Override or add rules here
     rules: {},
   },
-];
+);
