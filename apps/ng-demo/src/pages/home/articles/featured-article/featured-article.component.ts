@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Article } from '../../../../models/articles';
 
 @Component({
-  selector: 'app-featured-article',
-  template: `
+    selector: 'app-featured-article',
+    template: `
     <a
       routerLink="/{{
         this.featured?.organization?.slug || this.featured?.user?.username
@@ -22,8 +22,8 @@ import { Article } from '../../../../models/articles';
       </h3>
     </app-article-card>
   `,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         display: block;
         background-color: #fff;
@@ -60,7 +60,8 @@ import { Article } from '../../../../models/articles';
         font-size: 1.875rem;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class FeaturedArticleComponent {
   @Input() featured!: Article;

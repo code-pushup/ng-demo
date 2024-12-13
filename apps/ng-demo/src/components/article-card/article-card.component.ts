@@ -7,9 +7,10 @@ import { Article } from '../../models/articles';
 import { DateagoPipe } from '../../pipes/dateago.pipe';
 
 @Component({
-  selector: 'app-article-card',
-  templateUrl: './article-card.component.html',
-  styleUrls: ['./article-card.component.scss'],
+    selector: 'app-article-card',
+    templateUrl: './article-card.component.html',
+    styleUrls: ['./article-card.component.scss'],
+    standalone: false
 })
 export class ArticleCardComponent implements OnChanges {
   @Input() article!: Article;

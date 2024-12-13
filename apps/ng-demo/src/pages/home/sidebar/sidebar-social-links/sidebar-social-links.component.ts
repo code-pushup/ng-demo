@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar-social-links',
-  templateUrl: './sidebar-social-links.component.html',
-  styles: [
-    `
+    selector: 'app-sidebar-social-links',
+    templateUrl: './sidebar-social-links.component.html',
+    styles: [
+        `
       :host {
         padding: 1rem;
         margin-top: 1rem;
@@ -25,7 +25,8 @@ import { Component } from '@angular/core';
         height: auto;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class SidebarSocialLinksComponent {
   readonly socials = [

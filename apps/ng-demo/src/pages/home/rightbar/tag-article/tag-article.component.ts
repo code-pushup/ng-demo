@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ArticleTagsStore } from '../services/article-tags.store';
 
 @Component({
-  selector: 'app-tag-article',
-  template: `
+    selector: 'app-tag-article',
+    template: `
     <section>
       <header class="flex align-center">
         <h3>#{{ tag }}</h3>
@@ -23,8 +23,8 @@ import { ArticleTagsStore } from '../services/article-tags.store';
       <ng-template #error>loading</ng-template>
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       header {
         padding: 0.75rem 1rem;
         border-bottom: 1px solid #fbfcff;
@@ -70,8 +70,9 @@ import { ArticleTagsStore } from '../services/article-tags.store';
         border-radius: 5px;
       }
     `,
-  ],
-  viewProviders: [ArticleTagsStore],
+    ],
+    viewProviders: [ArticleTagsStore],
+    standalone: false
 })
 export class TagArticleComponent implements OnInit {
   @Input() tag = '';

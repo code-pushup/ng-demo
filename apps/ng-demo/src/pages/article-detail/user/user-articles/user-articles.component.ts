@@ -4,8 +4,8 @@ import { ArticleDetailStore } from '../../article/services/article-detail.store'
 import { UserArticlesStore } from '../../../../state/user-articles.store';
 
 @Component({
-  selector: 'app-user-articles',
-  template: `
+    selector: 'app-user-articles',
+    template: `
     <ng-container *ngIf="userArticles$ | async as articles">
       <section>
         <header class="flex align-center">
@@ -30,8 +30,8 @@ import { UserArticlesStore } from '../../../../state/user-articles.store';
       </section>
     </ng-container>
   `,
-  styles: [
-    `
+    styles: [
+        `
       header {
         padding: 0.75rem 1rem;
         border-bottom: 1px solid #fbfcff;
@@ -98,7 +98,8 @@ import { UserArticlesStore } from '../../../../state/user-articles.store';
         display: inline;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class UserArticlesComponent {
   @Input() name = '';

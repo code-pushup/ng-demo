@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar-advertisement',
-  template: `
+    selector: 'app-sidebar-advertisement',
+    template: `
     <div>
       <a href="https://angular.dev"
         ><img
@@ -15,13 +15,14 @@ import { Component } from '@angular/core';
       </a>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .ad-decription {
         text-align: center;
         line-height: 1.29em;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class SidebarAdvertisementComponent {}

@@ -7,8 +7,8 @@ import { UserStore } from '../../state/user.store';
 import { UserArticlesStore } from '../../state/user-articles.store';
 
 @Component({
-  selector: 'app-article-detail',
-  template: `
+    selector: 'app-article-detail',
+    template: `
     <aside>
       <app-reactions
         *ngIf="reaction$ | async as reactions"
@@ -25,8 +25,8 @@ import { UserArticlesStore } from '../../state/user-articles.store';
       <app-user-detail *ngIf="user" [user]="user"></app-user-detail>
     </ng-container>
   `,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         display: grid;
         grid-gap: 1rem;
@@ -37,8 +37,9 @@ import { UserArticlesStore } from '../../state/user-articles.store';
         grid-template-columns: 4rem minmax(0, 7fr) minmax(0, 3fr);
       }
     `,
-  ],
-  viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
+    ],
+    viewProviders: [ArticleDetailStore, UserStore, CommentsStore],
+    standalone: false
 })
 export class ArticleDetailComponent implements OnInit {
   article$ = this.articleDetailStore.article$.pipe(

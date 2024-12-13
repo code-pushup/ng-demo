@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styles: [
-    `
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styles: [
+        `
       :host {
         display: block;
         width: 240px;
@@ -39,6 +39,7 @@ import { Component } from '@angular/core';
         height: 1.5rem;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class SidebarComponent {}

@@ -2,8 +2,8 @@ import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { Comment } from '../../../../models/comment';
 
 @Component({
-  selector: 'app-comments',
-  template: `
+    selector: 'app-comments',
+    template: `
     <details
       #commentsSec
       (toggle)="cdRef.detectChanges()"
@@ -72,8 +72,8 @@ import { Comment } from '../../../../models/comment';
       ></app-comments>
     </details>
   `,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         display: block;
         app-comments {
@@ -81,7 +81,8 @@ import { Comment } from '../../../../models/comment';
         }
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class CommentsComponent {
   @Input() comments: Comment[] = [];

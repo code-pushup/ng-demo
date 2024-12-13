@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { UserDetails } from '../../../../models/user';
 
 @Component({
-  selector: 'app-user-detail',
-  template: `
+    selector: 'app-user-detail',
+    template: `
     <aside>
       <div class="aside-card">
         <div class="aside-username">
@@ -51,8 +51,8 @@ import { UserDetails } from '../../../../models/user';
       <app-user-articles [name]="user.name"></app-user-articles>
     </aside>
   `,
-  styles: [
-    `
+    styles: [
+        `
       aside {
         position: sticky;
         top: calc(var(--header-height) + 1rem);
@@ -114,7 +114,8 @@ import { UserDetails } from '../../../../models/user';
         }
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class UserDetailComponent {
   @Input() user!: UserDetails;
