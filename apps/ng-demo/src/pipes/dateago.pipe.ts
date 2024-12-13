@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dateago',
+    name: 'dateago',
+    standalone: false
 })
 export class DateagoPipe implements PipeTransform {
   transform(value: Date, args?: unknown[]): string {

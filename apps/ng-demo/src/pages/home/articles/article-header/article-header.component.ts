@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ARTICLE_HEADER_TABS } from '../../../../constants/home-article-tabs.constant';
 
 @Component({
-  selector: 'app-article-header',
-  template: `
+    selector: 'app-article-header',
+    template: `
     <header class="flex justify-between">
       <h1 class="subtitle">Posts</h1>
 
@@ -18,8 +18,8 @@ import { ARTICLE_HEADER_TABS } from '../../../../constants/home-article-tabs.con
       </nav>
     </header>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .tabs-list {
         margin: 0;
         padding: 0;
@@ -53,7 +53,8 @@ import { ARTICLE_HEADER_TABS } from '../../../../constants/home-article-tabs.con
         }
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class ArticleHeaderComponent {
   selectedTab = 'feed';

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { VideosListStore } from './videos-list/services/videos-list.store';
 
 @Component({
-  selector: 'app-videos',
-  template: `
+    selector: 'app-videos',
+    template: `
     <app-videos-header></app-videos-header>
     <div scrollTracker (scrollingFinished)="onScrollingFinished()">
       <ng-container *ngFor="let videos of videosList$ | async">
@@ -11,6 +11,7 @@ import { VideosListStore } from './videos-list/services/videos-list.store';
       </ng-container>
     </div>
   `,
+    standalone: false
 })
 export class VideosComponent implements OnInit {
   page = '0';

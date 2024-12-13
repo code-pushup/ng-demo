@@ -9,8 +9,9 @@ import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 @Directive({
-  /* eslint-disable @angular-eslint/directive-selector */
-  selector: '[scrollTracker]',
+    /* eslint-disable @angular-eslint/directive-selector */
+    selector: '[scrollTracker]',
+    standalone: false
 })
 export class ScrollTrackerDirective implements OnDestroy, OnInit {
   @Output() scrollingFinished = new EventEmitter<void>();

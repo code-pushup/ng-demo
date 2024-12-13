@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { VideosList } from '../../../../models/videosList';
 
 @Component({
-  selector: 'app-video-card',
-  template: `
+    selector: 'app-video-card',
+    template: `
     <div class="video-collection" id="{{ video.id }}">
       <a class="single-video-article single-article" href="{{ video.path }}">
         <div
@@ -23,8 +23,8 @@ import { VideosList } from '../../../../models/videosList';
       </a>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .video-collection {
         display: inline;
 
@@ -88,7 +88,8 @@ import { VideosList } from '../../../../models/videosList';
         }
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class VideoCardComponent {
   @Input() video!: VideosList;

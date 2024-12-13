@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TagsStore } from '../services/tags.store';
 
 @Component({
-  selector: 'app-sidebar-tags',
-  template: `
+    selector: 'app-sidebar-tags',
+    template: `
     <nav aria-label="Secondary sidebar nav">
       <header class="flex align-center justify-between">
         <h3 class="tags-title">My Tags</h3>
@@ -33,8 +33,8 @@ import { TagsStore } from '../services/tags.store';
       <ng-template #suspense>loading</ng-template>
     </nav>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .tags-title {
         font-size: 16px;
         font-weight: 700;
@@ -62,7 +62,8 @@ import { TagsStore } from '../services/tags.store';
         }
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class SidebarTagsComponent {
   tags$ = this.tagsStore.tags$;

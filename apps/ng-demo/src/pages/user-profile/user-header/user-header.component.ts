@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { UserDetails } from '../../../models/user';
 
 @Component({
-  selector: 'app-user-header',
-  templateUrl: './user-header.component.html',
-  styleUrls: ['./user-header.component.scss'],
+    selector: 'app-user-header',
+    templateUrl: './user-header.component.html',
+    styleUrls: ['./user-header.component.scss'],
+    standalone: false
 })
 export class UserHeaderComponent {
   @Input() user!: UserDetails;
