@@ -13,5 +13,10 @@ export default tsESLint.config(...baseConfig, ...angular, ...storybook, {
   },
   rules: {
     '@angular-eslint/prefer-standalone': 'error',
+
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
+    '@typescript-eslint/prefer-readonly': 'warn',
+    '@typescript-eslint/prefer-readonly-parameter-types': 'warn',
+    '@typescript-eslint/prefer-ts-expect-error': 'error',
   },
 });
