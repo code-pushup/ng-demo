@@ -78,6 +78,78 @@ const esLintConfig: CoreConfig = {
         },
       ].map((ref) => ({ ...ref, slug: slugify(ref.slug) })),
     },
+    {
+      slug: 'type-safety',
+      title: 'Type safety',
+      refs: [
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/no-explicit-any',
+          weight: 3,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/explicit-module-boundary-types',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/no-non-null-assertion',
+          weight: 2,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/no-floating-promises',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/no-unnecessary-type-assertion',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/no-misused-promises',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/prefer-readonly',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/prefer-readonly-parameter-types',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/prefer-optional-chain',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/prefer-ts-expect-error',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@typescript-eslint/unified-signatures',
+          weight: 1,
+        },
+      ].map((ref) => ({ ...ref, slug: slugify(ref.slug) })),
+    },
   ],
 };
 
