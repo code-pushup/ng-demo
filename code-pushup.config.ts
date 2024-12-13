@@ -5,7 +5,7 @@ import eslintPlugin, {
   eslintConfigFromAllNxProjects,
 } from '@code-pushup/eslint-plugin';
 import jsPackagesPlugin from '@code-pushup/js-packages-plugin';
-import { mergeConfigs } from '@code-pushup/utils';
+import { mergeConfigs, slugify } from '@code-pushup/utils';
 import type { CoreConfig } from '@code-pushup/models';
 import 'dotenv/config';
 
@@ -23,6 +23,60 @@ const esLintConfig: CoreConfig = {
       refs: [
         { type: 'group', plugin: 'eslint', slug: 'suggestions', weight: 1 },
       ],
+    },
+    {
+      slug: 'modern-angular',
+      title: 'Modern Angular',
+      refs: [
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/template/prefer-control-flow',
+          weight: 3,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/template/prefer-ngsrc',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/template/prefer-self-closing-tags',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/prefer-standalone',
+          weight: 3,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/use-injectable-provided-in',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/prefer-output-readonly',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/prefer-on-push-component-change-detection',
+          weight: 1,
+        },
+        {
+          type: 'audit' as const,
+          plugin: 'eslint',
+          slug: '@angular-eslint/use-lifecycle-interface',
+          weight: 1,
+        },
+      ].map((ref) => ({ ...ref, slug: slugify(ref.slug) })),
     },
   ],
 };
