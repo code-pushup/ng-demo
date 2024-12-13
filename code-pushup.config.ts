@@ -1,6 +1,3 @@
-import coveragePlugin, {
-  getNxCoveragePaths,
-} from '@code-pushup/coverage-plugin';
 import eslintPlugin, {
   eslintConfigFromAllNxProjects,
 } from '@code-pushup/eslint-plugin';
@@ -160,27 +157,6 @@ const esLintConfig: CoreConfig = {
   ],
 };
 
-const coverageConfig: CoreConfig = {
-  plugins: [
-    await coveragePlugin({
-      coverageToolCommand: {
-        command: 'npx',
-        args: ['nx', 'run-many', '-t', 'test', '--coverage', '--skipNxCache'],
-      },
-      reports: await getNxCoveragePaths(['test']),
-    }),
-  ],
-  categories: [
-    {
-      slug: 'coverage',
-      title: 'Coverage',
-      refs: [
-        { type: 'group', plugin: 'coverage', slug: 'coverage', weight: 1 },
-      ],
-    },
-  ],
-};
-
 const jsPackagesConfig: CoreConfig = {
   plugins: [await jsPackagesPlugin({ packageManager: 'npm' })],
   categories: [
@@ -217,9 +193,4 @@ const portalUploadConfig = process.env.CP_API_KEY
     }
   : {};
 
-export default mergeConfigs(
-  esLintConfig,
-  jsPackagesConfig,
-  coverageConfig,
-  portalUploadConfig
-);
+export default mergeConfigs(esLintConfig, jsPackagesConfig, portalUploadConfig);
