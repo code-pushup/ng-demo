@@ -1,12 +1,12 @@
-const playwright = require('eslint-plugin-playwright');
-const baseConfig = require('../../eslint.config.js');
+import tsESLint from 'typescript-eslint';
+import baseConfig from '../../eslint.config.js';
 
-module.exports = [
-  playwright.configs['flat/recommended'],
-  ...baseConfig,
-  {
-    files: ['**/*.ts', '**/*.js'],
-    // Override or add rules here
-    rules: {},
+export default tsESLint.config(...baseConfig, {
+  files: ['**/*.ts'],
+  languageOptions: {
+    parserOptions: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
+    },
   },
-];
+});
