@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "postinstall": "patch-package",
     "coverage": "npx nx run-many -t test --coverage --skipNxCache",
     "code-pushup": "npx @code-pushup/cli --no-progress --verbose"
   },
@@ -34,9 +35,9 @@
     "@angular/language-service": "19.0.4",
     "@code-pushup/cli": "^0.56.0",
     "@code-pushup/coverage-plugin": "^0.56.0",
-    "@code-pushup/js-packages-plugin": "^0.56.0",
-    "@code-pushup/eslint-plugin": "^0.56.0",
     "@code-pushup/eslint-config": "^0.10.8",
+    "@code-pushup/eslint-plugin": "^0.56.0",
+    "@code-pushup/js-packages-plugin": "^0.56.0",
     "@code-pushup/portal-client": "^0.9.0",
     "@code-pushup/utils": "^0.56.0",
     "@eslint/js": "^9.8.0",
@@ -73,6 +74,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "14.4.2",
     "nx": "20.2.2",
+    "patch-package": "^8.0.0",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
