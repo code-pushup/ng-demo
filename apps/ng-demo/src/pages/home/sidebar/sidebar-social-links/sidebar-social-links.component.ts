@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+
 
 @Component({
   selector: 'app-sidebar-social-links',
@@ -27,7 +27,7 @@ import { NgFor } from '@angular/common';
       }
     `,
   ],
-  imports: [NgFor],
+  imports: [],
 })
 export class SidebarSocialLinksComponent {
   readonly socials = [

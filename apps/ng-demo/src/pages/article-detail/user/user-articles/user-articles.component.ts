@@ -2,37 +2,40 @@ import { Component, Input } from '@angular/core';
 import { map, tap, withLatestFrom } from 'rxjs/operators';
 import { ArticleDetailStore } from '../../article/services/article-detail.store';
 import { UserArticlesStore } from '../../../../state/user-articles.store';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-articles',
 
   template: `
-    <ng-container *ngIf="userArticles$ | async as articles">
+    @if (userArticles$ | async; as articles) {
       <section>
         <header class="flex align-center">
           <h3>
             More From <a>{{ name }}</a>
           </h3>
         </header>
-        <a
-          *ngFor="let article of articles"
-          class="listing-item"
-          routerLink="/{{ article.user.username }}/{{ article.slug }}"
-        >
-          <div class="title">{{ article.title }}</div>
-          <div class="flex article-tags">
-            <span class="article-tag" *ngFor="let tag of article.tag_list">
-              #{{ tag }}
-            </span>
-          </div>
-        </a>
+        @for (article of articles; track article) {
+          <a
+            class="listing-item"
+            routerLink="/{{ article.user.username }}/{{ article.slug }}"
+            >
+            <div class="title">{{ article.title }}</div>
+            <div class="flex article-tags">
+              @for (tag of article.tag_list; track tag) {
+                <span class="article-tag">
+                  #{{ tag }}
+                </span>
+              }
+            </div>
+          </a>
+        }
         <ng-template #suspense>loading</ng-template>
         <ng-template #error>loading</ng-template>
       </section>
-    </ng-container>
-  `,
+    }
+    `,
   styles: [
     `
       header {
@@ -102,7 +105,7 @@ import { RouterLink } from '@angular/router';
       }
     `,
   ],
-  imports: [NgIf, NgFor, RouterLink, AsyncPipe],
+  imports: [RouterLink, AsyncPipe],
 })
 export class UserArticlesComponent {
   @Input() name = '';

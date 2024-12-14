@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HOME_TAGS } from '../../../../constants/home-tags.constant';
-import { NgFor } from '@angular/common';
+
 import { TagArticleComponent } from '../tag-article/tag-article.component';
 
 @Component({
@@ -8,12 +8,13 @@ import { TagArticleComponent } from '../tag-article/tag-article.component';
 
   template: `
     <aside>
-      <app-tag-article
-        *ngFor="let asideTag of asideTags"
-        [tag]="asideTag"
-      ></app-tag-article>
+      @for (asideTag of asideTags; track asideTag) {
+        <app-tag-article
+          [tag]="asideTag"
+        ></app-tag-article>
+      }
     </aside>
-  `,
+    `,
   styles: [
     `
       aside {
@@ -25,7 +26,7 @@ import { TagArticleComponent } from '../tag-article/tag-article.component';
       }
     `,
   ],
-  imports: [NgFor, TagArticleComponent],
+  imports: [TagArticleComponent],
 })
 export class RightbarContainerComponent {
   asideTags = HOME_TAGS;

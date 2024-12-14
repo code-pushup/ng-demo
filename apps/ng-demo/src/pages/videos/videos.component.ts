@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VideosListStore } from './videos-list/services/videos-list.store';
 import { VideosHeaderComponent } from './videos-list/videos-header/videos-header.component';
 import { ScrollTrackerDirective } from '../../components/scoll-tracker/scroll-tracker.directive';
-import { NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { VideoCardComponent } from './videos-list/video-card/video-card.component';
 
 @Component({
@@ -11,18 +11,17 @@ import { VideoCardComponent } from './videos-list/video-card/video-card.componen
   template: `
     <app-videos-header></app-videos-header>
     <div scrollTracker (scrollingFinished)="onScrollingFinished()">
-      <ng-container *ngFor="let videos of videosList$ | async">
+      @for (videos of videosList$ | async; track videos) {
         <app-video-card [video]="videos"></app-video-card>
-      </ng-container>
+      }
     </div>
-  `,
+    `,
   imports: [
     VideosHeaderComponent,
     ScrollTrackerDirective,
-    NgFor,
     VideoCardComponent,
-    AsyncPipe,
-  ],
+    AsyncPipe
+],
 })
 export default class VideosComponent implements OnInit {
   page = '0';

@@ -1,17 +1,19 @@
 <ul>
-  <li *ngFor="let social of socials">
-    <a
-      [href]="social.href"
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      class="cp-anchor-navigation"
-      [title]="social.label"
-    >
-      <img
-        class="icon"
-        [src]="social.imgSrc"
-        [attr.alt]="social.label + ' icon'"
-      />
-    </a>
-  </li>
-</ul>
+  @for (social of socials; track social) {
+    <li>
+      <a
+        [href]="social.href"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="cp-anchor-navigation"
+        [title]="social.label"
+        >
+        <img
+          class="icon"
+          [src]="social.imgSrc"
+          [attr.alt]="social.label + ' icon'"
+          />
+        </a>
+      </li>
+    }
+  </ul>

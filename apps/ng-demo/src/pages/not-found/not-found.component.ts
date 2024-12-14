@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
 
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   template: `
     <img style="width: 50%" src="/assets/angular-logo.gif" />
     <h1>This page does not exist</h1>

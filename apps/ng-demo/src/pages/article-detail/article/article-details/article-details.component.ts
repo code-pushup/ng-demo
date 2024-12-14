@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ArticleDetails } from '../../../../models/articles';
-import { NgIf, NgFor, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CommentsTreeComponent } from '../comments-tree/comments-tree.component';
 
@@ -10,64 +10,70 @@ import { CommentsTreeComponent } from '../comments-tree/comments-tree.component'
   template: `
     <article class="card article mb-4">
       <header>
-        <div class="article-cover" *ngIf="article.cover_image">
-          <img
-            [src]="article.cover_image"
-            width="1000"
-            height="420"
-            style="background-color: #dddddd"
-            alt="Cover image for {{ article.title }}"
-          />
-        </div>
-
-        <div class="article-header">
-          <h1>
-            {{ article.title }}
-          </h1>
-          <div class="flex article-tags">
-            <a class="article-tag" *ngFor="let tag of article.tags">
-              #{{ tag }}
-            </a>
-          </div>
-
-          <div class="article-subheader flex">
-            <a
-              routerLink="/{{ article.user.username }}"
-              class="flex align-center"
-            >
-              <div class="article-avatar">
-                <img
-                  [src]="article.user.profile_image_90"
-                  [alt]="article.user.username"
-                />
+        @if (article.cover_image) {
+          <div class="article-cover">
+            <img
+              [src]="article.cover_image"
+              width="1000"
+              height="420"
+              style="background-color: #dddddd"
+              alt="Cover image for {{ article.title }}"
+              />
+            </div>
+          }
+    
+          <div class="article-header">
+            <h1>
+              {{ article.title }}
+            </h1>
+            <div class="flex article-tags">
+              @for (tag of article.tags; track tag) {
+                <a class="article-tag">
+                  #{{ tag }}
+                </a>
+              }
+            </div>
+    
+            <div class="article-subheader flex">
+              <a
+                routerLink="/{{ article.user.username }}"
+                class="flex align-center"
+                >
+                <div class="article-avatar">
+                  <img
+                    [src]="article.user.profile_image_90"
+                    [alt]="article.user.username"
+                    />
+                  </div>
+                  <div class="article-user-name">{{ article.user.name }}</div>
+                </a>
+    
+                <span class="subheader-meta-info flex align-center">
+                  <time
+                    datetime="2021-08-04T15:38:54Z"
+                    class="date-no-year"
+                    title="Wednesday, 4 August 2021, 21:08:54"
+                    >{{ article.readable_publish_date }}</time
+                    >
+    
+                    @if (article.edited_at) {
+                      <em>
+                        ・ Updated on {{ article.edited_at | date : 'MMM d' }}</em
+                        >
+                    }
+                    <span> ・ {{ article.reading_time_minutes }} min read</span>
+                  </span>
+                  <span id="action-space" class="mb-4 s:mb-0"></span>
+                </div>
               </div>
-              <div class="article-user-name">{{ article.user.name }}</div>
-            </a>
-
-            <span class="subheader-meta-info flex align-center">
-              <time
-                datetime="2021-08-04T15:38:54Z"
-                class="date-no-year"
-                title="Wednesday, 4 August 2021, 21:08:54"
-                >{{ article.readable_publish_date }}</time
-              >
-
-              <em *ngIf="article.edited_at">
-                ・ Updated on {{ article.edited_at | date : 'MMM d' }}</em
-              >
-              <span> ・ {{ article.reading_time_minutes }} min read</span>
-            </span>
-            <span id="action-space" class="mb-4 s:mb-0"></span>
-          </div>
-        </div>
-      </header>
-
-      <div class="body-html" [innerHTML]="article?.body_html"></div>
-      <app-comments-tree
-        [commentsCount]="article.comments_count"
-      ></app-comments-tree>
-    </article>
-  `,
+            </header>
+    
+            <div class="body-html" [innerHTML]="article?.body_html"></div>
+            <app-comments-tree
+              [commentsCount]="article.comments_count"
+            ></app-comments-tree>
+          </article>
+    `,
   styles: [
     `
       :host {
@@ -148,7 +154,7 @@ import { CommentsTreeComponent } from '../comments-tree/comments-tree.component'
       }
     `,
   ],
-  imports: [NgIf, NgFor, RouterLink, CommentsTreeComponent, DatePipe],
+  imports: [RouterLink, CommentsTreeComponent, DatePipe],
 })
 export class ArticleDetailsComponent {
   @Input() article!: ArticleDetails;

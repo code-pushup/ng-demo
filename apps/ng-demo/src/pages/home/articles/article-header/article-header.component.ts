@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ARTICLE_HEADER_TABS } from '../../../../constants/home-article-tabs.constant';
-import { NgFor, TitleCasePipe } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-article-header',
@@ -8,18 +8,20 @@ import { NgFor, TitleCasePipe } from '@angular/common';
   template: `
     <header class="flex justify-between">
       <h1 class="subtitle">Posts</h1>
-
+    
       <nav class="flex" aria-label="View posts by">
         <ul class="tabs-list flex">
-          <li *ngFor="let tab of tabs">
-            <a [class.active]="tab === selectedTab" class="tab-item pointer">{{
-              tab | titlecase
-            }}</a>
-          </li>
+          @for (tab of tabs; track tab) {
+            <li>
+              <a [class.active]="tab === selectedTab" class="tab-item pointer">{{
+                tab | titlecase
+              }}</a>
+            </li>
+          }
         </ul>
       </nav>
     </header>
-  `,
+    `,
   styles: [
     `
       .tabs-list {
@@ -56,7 +58,7 @@ import { NgFor, TitleCasePipe } from '@angular/common';
       }
     `,
   ],
-  imports: [NgFor, TitleCasePipe],
+  imports: [TitleCasePipe],
 })
 export class ArticleHeaderComponent {
   selectedTab = 'feed';

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArticleTagsStore } from '../services/article-tags.store';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,21 +11,24 @@ import { RouterLink } from '@angular/router';
       <header class="flex align-center">
         <h3>#{{ tag }}</h3>
       </header>
-
-      <div *ngIf="article$ | async as articles">
-        <a
-          *ngFor="let article of articles"
-          class="listing-item"
-          routerLink="/{{ article.user.username }}/{{ article.slug }}"
-        >
-          <div>{{ article.title }}</div>
-          <div class="listing-type">{{ article.comments_count }} comments</div>
-        </a>
-      </div>
+    
+      @if (article$ | async; as articles) {
+        <div>
+          @for (article of articles; track article) {
+            <a
+              class="listing-item"
+              routerLink="/{{ article.user.username }}/{{ article.slug }}"
+              >
+              <div>{{ article.title }}</div>
+              <div class="listing-type">{{ article.comments_count }} comments</div>
+            </a>
+          }
+        </div>
+      }
       <ng-template #suspense>loading</ng-template>
       <ng-template #error>loading</ng-template>
     </section>
-  `,
+    `,
   styles: [
     `
       header {
@@ -75,7 +78,7 @@ import { RouterLink } from '@angular/router';
     `,
   ],
   viewProviders: [ArticleTagsStore],
-  imports: [NgIf, NgFor, RouterLink, AsyncPipe],
+  imports: [RouterLink, AsyncPipe],
 })
 export class TagArticleComponent implements OnInit {
   @Input() tag = '';

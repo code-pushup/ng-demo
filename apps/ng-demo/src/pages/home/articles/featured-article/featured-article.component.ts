@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Article } from '../../../../models/articles';
 import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+
 import { ArticleCardComponent } from '../../../../components/article-card/article-card.component';
 
 @Component({
@@ -15,17 +15,19 @@ import { ArticleCardComponent } from '../../../../components/article-card/articl
       class="featured-img"
       style.background-image="url({{ featured?.cover_image }})"
     ></a>
-    <app-article-card *ngIf="featured" [article]="featured">
-      <h3
+    @if (featured) {
+      <app-article-card [article]="featured">
+        <h3
         routerLink="/{{
           this.featured?.organization?.slug || this.featured?.user?.username
         }}/{{ featured.slug }}"
-        class="featured-title"
-      >
-        {{ featured?.title }}
-      </h3>
-    </app-article-card>
-  `,
+          class="featured-title"
+          >
+          {{ featured?.title }}
+        </h3>
+      </app-article-card>
+    }
+    `,
   styles: [
     `
       :host {
@@ -65,7 +67,7 @@ import { ArticleCardComponent } from '../../../../components/article-card/articl
       }
     `,
   ],
-  imports: [RouterLink, NgIf, ArticleCardComponent],
+  imports: [RouterLink, ArticleCardComponent],
 })
 export class FeaturedArticleComponent {
   @Input() featured!: Article;

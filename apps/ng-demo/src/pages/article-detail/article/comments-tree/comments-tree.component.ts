@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommentsStore } from '../services/comments.store';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { CommentsComponent } from '../comments/comments.component';
 
 @Component({
@@ -13,10 +13,12 @@ import { CommentsComponent } from '../comments/comments.component';
       </h2>
       <button class="subscribe-btn btn" type="button">Subscribe</button>
     </header>
-    <div *ngIf="comments$ | async as comments" class="comments">
-      <app-comments [comments]="comments"></app-comments>
-    </div>
-  `,
+    @if (comments$ | async; as comments) {
+      <div class="comments">
+        <app-comments [comments]="comments"></app-comments>
+      </div>
+    }
+    `,
   styles: [
     `
       :host {
@@ -27,7 +29,7 @@ import { CommentsComponent } from '../comments/comments.component';
       }
     `,
   ],
-  imports: [NgIf, CommentsComponent, AsyncPipe],
+  imports: [CommentsComponent, AsyncPipe],
 })
 export class CommentsTreeComponent {
   @Input() commentsCount = 0;

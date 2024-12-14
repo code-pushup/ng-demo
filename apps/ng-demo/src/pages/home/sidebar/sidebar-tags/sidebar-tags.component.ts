@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TagsStore } from '../services/tags.store';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar-tags',
@@ -13,7 +13,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
           href="/dashboard/following_tags"
           aria-label="Customize tag priority"
           title="Customize tag priority"
-        >
+          >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#64707d">
             <path
               d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"
@@ -21,20 +21,23 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
           </svg>
         </a>
       </header>
-      <div
-        *ngIf="tags$ | async as tags"
-        class="followed-tags"
-        style="max-height: 42vh"
-      >
-        <div *ngFor="let tag of tags">
-          <a title="{{ tag.name }} tag" href="/tag/{{ tag.name }}"
-            >#{{ tag.name }}</a
+      @if (tags$ | async; as tags) {
+        <div
+          class="followed-tags"
+          style="max-height: 42vh"
           >
-        </div>
-      </div>
-      <ng-template #suspense>loading</ng-template>
-    </nav>
-  `,
+          @for (tag of tags; track tag) {
+            <div>
+              <a title="{{ tag.name }} tag" href="/tag/{{ tag.name }}"
+                >#{{ tag.name }}</a
+                >
+              </div>
+            }
+          </div>
+        }
+        <ng-template #suspense>loading</ng-template>
+      </nav>
+    `,
   styles: [
     `
       .tags-title {
@@ -65,7 +68,7 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
       }
     `,
   ],
-  imports: [NgIf, NgFor, AsyncPipe],
+  imports: [AsyncPipe],
 })
 export class SidebarTagsComponent {
   tags$ = this.tagsStore.tags$;

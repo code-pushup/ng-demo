@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
-import { NgIf, NgFor, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Article } from '../../models/articles';
 import { DateagoPipe } from '../../pipes/dateago.pipe';
@@ -10,7 +10,7 @@ import { DateagoPipe } from '../../pipes/dateago.pipe';
 
   templateUrl: './article-card.component.html',
   styleUrls: ['./article-card.component.scss'],
-  imports: [RouterLink, NgIf, NgFor, DatePipe, DateagoPipe],
+  imports: [RouterLink, DatePipe, DateagoPipe],
 })
 export class ArticleCardComponent implements OnChanges {
   @Input() article!: Article;

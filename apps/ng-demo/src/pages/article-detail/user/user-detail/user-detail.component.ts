@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserDetails } from '../../../../models/user';
-import { NgIf } from '@angular/common';
+
 import { UserArticlesComponent } from '../user-articles/user-articles.component';
 
 @Component({
@@ -21,17 +21,19 @@ import { UserArticlesComponent } from '../user-articles/user-articles.component'
           {{ user.summary }}
         </div>
         &nbsp;
-
+    
         <div>
           <ul class="m-0 p-0">
-            <li *ngIf="user.location">
-              <div class="key">Location</div>
-              <div class="value">
-                <time datetime="2020-12-08T08:18:06Z" class="date">{{
-                  user.location
-                }}</time>
-              </div>
-            </li>
+            @if (user.location) {
+              <li>
+                <div class="key">Location</div>
+                <div class="value">
+                  <time datetime="2020-12-08T08:18:06Z" class="date">{{
+                    user.location
+                  }}</time>
+                </div>
+              </li>
+            }
             <li>
               <div class="key">Joined</div>
               <div class="value">
@@ -40,20 +42,22 @@ import { UserArticlesComponent } from '../user-articles/user-articles.component'
                 }}</time>
               </div>
             </li>
-            <li *ngIf="user.website_url">
-              <div class="key">Website</div>
-              <div class="value">
-                <time datetime="2020-12-08T08:18:06Z" class="date">{{
-                  user.website_url
-                }}</time>
-              </div>
-            </li>
+            @if (user.website_url) {
+              <li>
+                <div class="key">Website</div>
+                <div class="value">
+                  <time datetime="2020-12-08T08:18:06Z" class="date">{{
+                    user.website_url
+                  }}</time>
+                </div>
+              </li>
+            }
           </ul>
         </div>
       </div>
       <app-user-articles [name]="user.name"></app-user-articles>
     </aside>
-  `,
+    `,
   styles: [
     `
       aside {
@@ -118,7 +122,7 @@ import { UserArticlesComponent } from '../user-articles/user-articles.component'
       }
     `,
   ],
-  imports: [NgIf, UserArticlesComponent],
+  imports: [UserArticlesComponent],
 })
 export class UserDetailComponent {
   @Input() user!: UserDetails;
