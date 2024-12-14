@@ -15,13 +15,7 @@
         "browser": "apps/ng-demo/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/ng-demo/tsconfig.app.json",
-        "assets": [
-          {
-            "glob": "favicon.ico",
-            "input": "apps/ng-demo/src/assets/favicon.ico"
-          },
-          "apps/ng-demo/src/assets"
-        ],
+        "assets": ["apps/ng-demo/src/assets"],
         "styles": [
           "apps/ng-demo/src/styles.css",
           "apps/ng-demo/src/styles/article.css",
