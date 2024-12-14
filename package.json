@@ -82,6 +82,9 @@
     "typescript": "5.6.3",
     "typescript-eslint": "^8.0.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
+  },
   "overrides": {
     "@code-pushup/eslint-config": {
       "angular-eslint": "^19.0.0"
