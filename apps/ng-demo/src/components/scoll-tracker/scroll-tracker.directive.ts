@@ -1,19 +1,12 @@
-import {
-  Directive,
-  Output,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Directive, OnDestroy, OnInit, output } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 @Directive({
-   
   selector: '[scrollTracker]',
 })
 export class ScrollTrackerDirective implements OnDestroy, OnInit {
-  @Output() scrollingFinished = new EventEmitter<void>();
+  readonly scrollingFinished = output();
   subscriptions!: Subscription;
 
   ngOnInit(): void {
