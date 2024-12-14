@@ -12,7 +12,6 @@ env:
 
 jobs:
   code_pushup:
-    timeout-minutes: 15
     runs-on: ubuntu-latest
     name: Code PushUp
     steps:
@@ -30,6 +29,7 @@ jobs:
 
       - name: Run Code PushUp action
         uses: code-pushup/github-action@v0
+        timeout-minutes: 5
         with:
-          bin: npx @code-pushup/cli -- --no-progress --verbose
+          bin: npx @code-pushup/cli --no-progress --verbose
           retention: 14
