@@ -9,14 +9,14 @@ import { ArticleCardComponent } from '../../../../components/article-card/articl
   selector: 'app-article-container',
 
   template: `
-    <app-article-header></app-article-header>
+    <app-article-header />
     @for (article of featuredArticle | async; track article) {
       <app-featured-article
         [featured]="article"
-      ></app-featured-article>
+      />
     }
     @for (article of articles$ | async; track article) {
-      <app-article-card [article]="article"></app-article-card>
+      <app-article-card [article]="article" />
     }
     `,
   imports: [
@@ -30,5 +30,5 @@ export class ArticleContainerComponent {
   articles$ = this.articleStore.articles$;
   featuredArticle = this.articleStore.featuredArticles$;
 
-  constructor(private articleStore: ArticleStore) {}
+  constructor(private readonly articleStore: ArticleStore) {}
 }

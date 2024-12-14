@@ -44,7 +44,7 @@ describe('TagsStore', () => {
   it('should change state as in setTags function', (done) => {
     store.setTags(mockTags);
     store.state$.subscribe((tags) => {
-      expect(tags.tags.length).toBe(2);
+      expect(tags.tags).toHaveLength(2);
       expect(tags.tags[1]).toEqual(mockTags[1]);
       done();
     });
@@ -53,10 +53,11 @@ describe('TagsStore', () => {
   it('should return the current value of the store tags', (done) => {
     store.setState({ tags: mockTags });
     store.tags$.subscribe((tags) => {
-      expect(tags.length).toBe(2);
+      expect(tags).toHaveLength(2);
       expect(tags[1]).toEqual(mockTags[1]);
       done();
     });
   });
+
   2;
 });

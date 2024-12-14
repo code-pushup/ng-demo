@@ -4,7 +4,7 @@ import { TagsApiService } from './tags-api.service';
 import { tapResponse } from '@ngrx/operators';
 import { Tag } from '../../../../models/tags';
 
-interface TagsState {
+type TagsState = {
   tags: Tag[];
 }
 

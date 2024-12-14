@@ -6,7 +6,7 @@ import { VideoslistApiService } from './videoslist-api.service';
 import { tapResponse } from '@ngrx/operators';
 import { VideosList } from '../../../../models/videosList';
 
-interface VideosListState {
+type VideosListState = {
   VideosList: VideosList[];
 }
 
@@ -35,7 +35,7 @@ export class VideosListStore extends ComponentStore<VideosListState> {
         )
       )
   );
-  constructor(private VideoslistApiS: VideoslistApiService) {
+  constructor(private readonly VideoslistApiS: VideoslistApiService) {
     super({ VideosList: [] });
   }
 }

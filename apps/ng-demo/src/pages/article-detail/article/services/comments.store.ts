@@ -6,7 +6,7 @@ import { CommentsApiService } from './comments-api.service';
 import { Comment } from '../../../../models/comment';
 import { tapResponse } from '@ngrx/operators';
 
-interface CommentsState {
+type CommentsState = {
   comments: Comment[];
 }
 
@@ -35,7 +35,7 @@ export class CommentsStore extends ComponentStore<CommentsState> {
     )
   );
 
-  constructor(private commetsApiS: CommentsApiService) {
+  constructor(private readonly commetsApiS: CommentsApiService) {
     super({ comments: [] });
   }
 }

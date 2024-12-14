@@ -6,7 +6,7 @@ import { tapResponse } from '@ngrx/operators';
 import { UserDetails } from '../models/user';
 import { UserApiService } from '../services/user-api.service';
 
-interface UserState {
+type UserState = {
   user: UserDetails | null;
 }
 
@@ -30,7 +30,7 @@ export class UserStore extends ComponentStore<UserState> {
     )
   );
 
-  constructor(private userApiS: UserApiService) {
+  constructor(private readonly userApiS: UserApiService) {
     super({ user: null });
   }
 }

@@ -1,4 +1,4 @@
-export interface Organization {
+export type Organization = {
   name: string;
   username: string;
   slug: string;

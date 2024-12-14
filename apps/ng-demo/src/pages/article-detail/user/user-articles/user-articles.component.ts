@@ -122,7 +122,7 @@ export class UserArticlesComponent {
     })
   );
   constructor(
-    private userArticleStore: UserArticlesStore,
-    private articleDetailsStore: ArticleDetailStore
+    private readonly userArticleStore: UserArticlesStore,
+    private readonly articleDetailsStore: ArticleDetailStore
   ) {}
 }

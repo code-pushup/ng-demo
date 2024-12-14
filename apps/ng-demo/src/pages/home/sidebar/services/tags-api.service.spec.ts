@@ -31,6 +31,6 @@ describe('TagsApiService', () => {
   it('should send a get request to appropriate url on getTags subscription', () => {
     service.getTags().subscribe();
     const req = httpMock.expectOne(`${BASE_API}/tags`);
-    expect(req.request.method).toEqual('GET');
+    expect(req.request.method).toBe('GET');
   });
 });

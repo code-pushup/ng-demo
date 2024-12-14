@@ -8,7 +8,7 @@ import { Tag } from '../../../../models/tags';
   providedIn: 'root',
 })
 export class TagsApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getTags(): Observable<Tag[]> {
     return this.http.get<Tag[]>(`${BASE_API}/tags`);

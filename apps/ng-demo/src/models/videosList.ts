@@ -1,4 +1,4 @@
-export interface VideosList {
+export type VideosList = {
   cloudinary_video_url: string;
   id: number;
   path: string;

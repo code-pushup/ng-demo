@@ -12,12 +12,12 @@ import { ArticleCardComponent } from '../../components/article-card/article-card
   template: `
     @if (user$ | async; as user) {
       @if (user) {
-        <app-user-header [user]="user"></app-user-header>
+        <app-user-header [user]="user" />
       }
     }
     
     @for (article of articles$ | async; track article) {
-      <app-article-card [article]="article"></app-article-card>
+      <app-article-card [article]="article" />
     }
     `,
   styles: [
@@ -36,9 +36,9 @@ export default class UserProfileComponent implements OnInit {
   user$ = this.userStore.user$;
   articles$ = this.userArticles.articles$;
   constructor(
-    private userStore: UserStore,
-    private route: ActivatedRoute,
-    private userArticles: UserArticlesStore
+    private readonly userStore: UserStore,
+    private readonly route: ActivatedRoute,
+    private readonly userArticles: UserArticlesStore
   ) {}
   ngOnInit() {
     this.userStore.getUser(this.route.snapshot.params.username);

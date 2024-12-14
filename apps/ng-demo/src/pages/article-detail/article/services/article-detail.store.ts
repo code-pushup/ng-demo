@@ -8,7 +8,7 @@ import { ArticleDetails } from '../../../../models/articles';
 import { Reaction } from '../../../../models/reaction-data';
 import { tapResponse } from '@ngrx/operators';
 
-interface ArticleState {
+type ArticleState = {
   article: ArticleDetails | null;
   reactions: Reaction[];
 }
@@ -53,7 +53,7 @@ export class ArticleDetailStore extends ComponentStore<ArticleState> {
       )
     )
   );
-  constructor(private articleDetailApiS: ArticleDetailApiService) {
+  constructor(private readonly articleDetailApiS: ArticleDetailApiService) {
     super({ article: null, reactions: [] });
   }
 }

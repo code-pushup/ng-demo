@@ -11,7 +11,7 @@ import { TagArticleComponent } from '../tag-article/tag-article.component';
       @for (asideTag of asideTags; track asideTag) {
         <app-tag-article
           [tag]="asideTag"
-        ></app-tag-article>
+        />
       }
     </aside>
     `,

@@ -1,8 +1,8 @@
-export interface ReactionData {
+export type ReactionData = {
   article_reaction_counts: Reaction[];
 }
 
-export interface Reaction {
+export type Reaction = {
   category: string;
   count: number;
 }

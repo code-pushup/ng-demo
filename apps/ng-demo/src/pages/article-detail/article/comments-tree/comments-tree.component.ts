@@ -15,7 +15,7 @@ import { CommentsComponent } from '../comments/comments.component';
     </header>
     @if (comments$ | async; as comments) {
       <div class="comments">
-        <app-comments [comments]="comments"></app-comments>
+        <app-comments [comments]="comments" />
       </div>
     }
     `,
@@ -34,5 +34,5 @@ import { CommentsComponent } from '../comments/comments.component';
 export class CommentsTreeComponent {
   @Input() commentsCount = 0;
   comments$ = this.commentStore.comments$;
-  constructor(private commentStore: CommentsStore) {}
+  constructor(private readonly commentStore: CommentsStore) {}
 }

@@ -8,7 +8,7 @@ import { VideosList } from '../../../../models/videosList';
   providedIn: 'root',
 })
 export class VideoslistApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getVideoslist(params?: Record<string, string>): Observable<VideosList[]> {
     const newParams = new HttpParams({ fromObject: params }).toString();

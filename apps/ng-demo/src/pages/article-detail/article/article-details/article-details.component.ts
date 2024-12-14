@@ -71,7 +71,7 @@ import { CommentsTreeComponent } from '../comments-tree/comments-tree.component'
             <div class="body-html" [innerHTML]="article?.body_html"></div>
             <app-comments-tree
               [commentsCount]="article.comments_count"
-            ></app-comments-tree>
+            />
           </article>
     `,
   styles: [

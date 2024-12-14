@@ -18,19 +18,19 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       @if (reaction$ | async; as reactions) {
         <app-reactions
           [reactions]="reactions"
-        ></app-reactions>
+        />
       }
     </aside>
     @if (article$ | async; as article) {
       @if (article) {
         <app-article-details
           [article]="article"
-        ></app-article-details>
+        />
       }
     }
     @if (user$ | async; as user) {
       @if (user) {
-        <app-user-detail [user]="user"></app-user-detail>
+        <app-user-detail [user]="user" />
       }
     }
     `,
@@ -69,11 +69,11 @@ export default class ArticleDetailComponent implements OnInit {
   reaction$ = this.articleDetailStore.reaction$;
   user$ = this.userStore.user$;
   constructor(
-    private articleDetailStore: ArticleDetailStore,
-    private route: ActivatedRoute,
-    private userStore: UserStore,
-    private articleUserStore: UserArticlesStore,
-    private commentsStore: CommentsStore
+    private readonly articleDetailStore: ArticleDetailStore,
+    private readonly route: ActivatedRoute,
+    private readonly userStore: UserStore,
+    private readonly articleUserStore: UserArticlesStore,
+    private readonly commentsStore: CommentsStore
   ) {}
 
   ngOnInit(): void {

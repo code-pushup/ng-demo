@@ -9,10 +9,10 @@ import { VideoCardComponent } from './videos-list/video-card/video-card.componen
   selector: 'app-videos',
 
   template: `
-    <app-videos-header></app-videos-header>
+    <app-videos-header />
     <div scrollTracker (scrollingFinished)="onScrollingFinished()">
       @for (videos of videosList$ | async; track videos) {
-        <app-video-card [video]="videos"></app-video-card>
+        <app-video-card [video]="videos" />
       }
     </div>
     `,
@@ -27,7 +27,7 @@ export default class VideosComponent implements OnInit {
   page = '0';
   videosList$ = this.VideosListStore.VideosList$;
 
-  constructor(private VideosListStore: VideosListStore) {}
+  constructor(private readonly VideosListStore: VideosListStore) {}
 
   ngOnInit(): void {
     this.VideosListStore.getVideoslist({

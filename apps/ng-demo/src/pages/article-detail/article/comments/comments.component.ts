@@ -32,7 +32,7 @@ import { DatePipe } from '@angular/common';
                 >
                 <path
                   d="M12 10.677L8 6.935 9 6l3 2.807L15 6l1 .935-4 3.742zm0 4.517L9 18l-1-.935 4-3.742 4 3.742-1 .934-3-2.805z"
-                ></path>
+                />
               </svg>
             }
             @if (!commentsSec.open) {
@@ -46,7 +46,7 @@ import { DatePipe } from '@angular/common';
                   >
                   <path
                     d="M12 18l-4-3.771 1-.943 3 2.829 3-2.829 1 .943L12 18zm0-10.115l-3 2.829-1-.943L12 6l4 3.771-1 .942-3-2.828z"
-                  ></path>
+                  />
                 </svg>
                 <div class="comment-username">{{ comment.user.name }}</div>
               </div>
@@ -74,7 +74,7 @@ import { DatePipe } from '@angular/common';
           <app-comments
             class="app-comments"
             [comments]="comment.children"
-          ></app-comments>
+          />
         </details>
       }
     `,

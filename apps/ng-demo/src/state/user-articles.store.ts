@@ -6,7 +6,7 @@ import { tapResponse } from '@ngrx/operators';
 import { Article } from '../models/articles';
 import { ArticleApiService } from '../services/article-api.service';
 
-interface ArticlesState {
+type ArticlesState = {
   articles: Article[];
 }
 @Injectable({
@@ -16,12 +16,10 @@ export class UserArticlesStore extends ComponentStore<ArticlesState> {
   readonly articles$ = this.select((state) => state.articles);
 
   readonly setArticles = this.updater(
-    (state: ArticlesState, articles: Article[]) => {
-      return {
+    (state: ArticlesState, articles: Article[]) => ({
         ...state,
         articles,
-      };
-    }
+      })
   );
 
   readonly getArticles = this.effect(
@@ -38,7 +36,7 @@ export class UserArticlesStore extends ComponentStore<ArticlesState> {
       )
   );
 
-  constructor(private articleApiS: ArticleApiService) {
+  constructor(private readonly articleApiS: ArticleApiService) {
     super({ articles: [] });
   }
 }

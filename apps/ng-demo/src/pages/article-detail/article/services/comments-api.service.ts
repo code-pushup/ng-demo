@@ -8,7 +8,7 @@ import { Comment } from '../../../../models/comment';
   providedIn: 'root',
 })
 export class CommentsApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getComments(id: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${BASE_API}/comments?a_id=${id}`);

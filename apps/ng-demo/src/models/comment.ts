@@ -1,6 +1,6 @@
 import { User } from './user';
 
-export interface Comment {
+export type Comment = {
   type_of: string;
   id_code: string;
   created_at: Date;

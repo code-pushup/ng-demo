@@ -1,4 +1,4 @@
-export interface User {
+export type User = {
   name: string;
   username: string;
   twitter_username: string;
@@ -8,7 +8,7 @@ export interface User {
   profile_image_90: string;
 }
 
-export interface UserDetails {
+export type UserDetails = {
   type_of: string;
   id: number;
   username: string;

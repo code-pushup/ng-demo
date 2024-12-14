@@ -8,7 +8,7 @@ import { Article } from '../models/articles';
   providedIn: 'root',
 })
 export class ArticleApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getArticles(
     params?: Record<string, string | number | boolean>

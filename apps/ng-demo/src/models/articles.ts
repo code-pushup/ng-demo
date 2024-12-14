@@ -2,7 +2,7 @@ import { Organization } from './organisation';
 import { Tag } from './tags';
 import { User } from './user';
 
-export interface Article {
+export type Article = {
   type_of: string;
   id: number;
   title: string;
@@ -35,7 +35,7 @@ export interface Article {
  * This is a bit redundant wrt to article but interfaces are free in runtime. So I kept it
  * Todo In future use Omit and extend to reuse one an another
  */
-export interface ArticleDetails {
+export type ArticleDetails = {
   type_of: string;
   id: number;
   title: string;

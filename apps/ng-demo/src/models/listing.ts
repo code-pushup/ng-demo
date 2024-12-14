@@ -1,6 +1,6 @@
 import { User } from './user';
 
-export interface Listing {
+export type Listing = {
   type_of: string;
   id: number;
   created_at: string;

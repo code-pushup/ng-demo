@@ -84,7 +84,7 @@ export class TagArticleComponent implements OnInit {
   @Input() tag = '';
   article$ = this.articleStore.articles$;
 
-  constructor(private articleStore: ArticleTagsStore) {}
+  constructor(private readonly articleStore: ArticleTagsStore) {}
 
   ngOnInit(): void {
     this.articleStore.getArticles({ tag: this.tag, per_page: 6 });

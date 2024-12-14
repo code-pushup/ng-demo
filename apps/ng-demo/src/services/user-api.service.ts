@@ -8,7 +8,7 @@ import { UserDetails } from '../models/user';
   providedIn: 'root',
 })
 export class UserApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getUser(username?: string): Observable<UserDetails> {
     return this.http.get<UserDetails>(

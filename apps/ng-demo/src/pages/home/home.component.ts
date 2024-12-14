@@ -7,9 +7,9 @@ import { RightbarContainerComponent } from './rightbar/rightbar-container/rightb
   selector: 'app-home',
 
   template: `
-    <app-sidebar></app-sidebar>
-    <app-article-container></app-article-container>
-    <app-rightbar-container></app-rightbar-container>
+    <app-sidebar />
+    <app-article-container />
+    <app-rightbar-container />
   `,
   styles: [
     `

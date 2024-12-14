@@ -55,7 +55,7 @@ import { UserArticlesComponent } from '../user-articles/user-articles.component'
           </ul>
         </div>
       </div>
-      <app-user-articles [name]="user.name"></app-user-articles>
+      <app-user-articles [name]="user.name" />
     </aside>
     `,
   styles: [

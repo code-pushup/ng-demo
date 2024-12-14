@@ -10,7 +10,7 @@ import { Reaction, ReactionData } from '../../../../models/reaction-data';
   providedIn: 'root',
 })
 export class ArticleDetailApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getArticle(username: string, slug: string): Observable<ArticleDetails> {
     return this.http.get<ArticleDetails>(

@@ -6,7 +6,7 @@ import { Article } from '../../../../models/articles';
 import { tapResponse } from '@ngrx/operators';
 import { ArticleApiService } from '../../../../services/article-api.service';
 
-interface ArticlesState {
+type ArticlesState = {
   articles: Article[];
 }
 
@@ -19,7 +19,7 @@ export class ArticleTagsStore extends ComponentStore<ArticlesState> {
   readonly setArticles = this.updater(
     (state: ArticlesState, articles: Article[]) => ({
       ...state,
-      articles: articles,
+      articles,
     })
   );
 
@@ -39,7 +39,7 @@ export class ArticleTagsStore extends ComponentStore<ArticlesState> {
       )
   );
 
-  constructor(private articleApiS: ArticleApiService) {
+  constructor(private readonly articleApiS: ArticleApiService) {
     super({ articles: [] });
   }
 }
