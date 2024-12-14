@@ -1,0 +1,9 @@
+diff --git a/node_modules/@code-pushup/cli/index.js b/node_modules/@code-pushup/cli/index.js
+index 6b1a119..a9de404 100755
+--- a/node_modules/@code-pushup/cli/index.js
++++ b/node_modules/@code-pushup/cli/index.js
+@@ -4260,3 +4260,4 @@ var cli = (args) => yargsCli(args, {
+ 
+ // packages/cli/src/index.ts
+ await cli(hideBin(process.argv)).argv;
++process.exit(0)
